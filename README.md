@@ -1,20 +1,38 @@
-<p align="center">
-    <a href="">
-    <img src="" alt="" width="auto" height="100">
-  </a>
-</p>
+# [Tabela Fipe](https://desafio-volanty.netlify.com)
+
+### Demonstração
+
+### https://desafio-volanty.netlify.com
 
 ### Instalação
 
-Para fazer o download das dependências utilizadas e gravadas na package.json, rodar o comando:
+Para realizar o download do projeto:
 
 ```sh
-$ npm install
+$ git clone git@github.com:felipenoka/desafio-volanty.git
 ```
 
-
-Como o projeto foi realizado com o comando *create-react-app*, para testar podemos simplesmente rodar o comando:
+Instale as dependências e inicie o projeto:
 
 ```sh
+$ npm install 
 $ npm start
 ```
+  
+### Tecnologias
+- HTML5
+
+- CSS
+  - Bootstrap 4
+  
+- JavaScript
+  - ES6 + Babel
+  - React JS
+  - React Router DOM 
+  - Create React App
+  - ESLint
+  - Husky
+  
+  
+### Documentação API Fipe
+A documentação da API utilizada para obter os dados está disponível em: [FIPEAPI](https://fipeapi.appspot.com).
