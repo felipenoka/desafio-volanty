@@ -25,6 +25,7 @@ class App extends Component {
   }
 
   getMarca = () => {
+    this.setState({ marca: [], veiculo: [], modelo: [] });
     api.get(`/marcas.json`).then(res => {
       // eslint-disable-next-line array-callback-return
       res.data.map(item =>
@@ -39,6 +40,7 @@ class App extends Component {
   };
 
   getVehicle = idVehicle => {
+    this.setState({ veiculo: [], modelo: [] });
     api.get(`veiculos/${idVehicle}.json`).then(res => {
       // eslint-disable-next-line array-callback-return
       res.data.map(item => {
@@ -53,6 +55,7 @@ class App extends Component {
   };
 
   getModelAndYear = idVehicle => {
+    this.setState({ modelo: [] });
     api
       .get(`veiculo/${this.state.currentIdVehicle}/${idVehicle}.json`)
       .then(res => {
