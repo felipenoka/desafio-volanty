@@ -1,49 +1,58 @@
-import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import { Button, Container, Row, Col } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import React, { Component } from "react";
+import { withStyles } from "@material-ui/core/styles";
+import { Button, Container, Row, Col } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import PropTypes from "prop-types";
 
-import Select from '../components/select/select';
-import AboutCar from '../components/infolabel/infocar';
+import Select from "../components/select/select";
+import AboutCar from "../components/infolabel/infocar";
 
-const styles = theme => ({
+const styles = () => ({
   select: {
-    width: '100%',
+    width: "100%",
     height: 40,
-    margin: '10px 0'
+    margin: "10px 0"
   },
   bgcontainer: {
-    background: 'linear-gradient(90deg, #009ddf, #2167b2 49%, #2f4f98)'
+    background: "linear-gradient(90deg, #009ddf, #2167b2 49%, #2f4f98)"
   },
   footer: {
-    background: 'linear-gradient(90deg, #009ddf, #2167b2 49%, #2f4f98)',
+    background: "linear-gradient(90deg, #009ddf, #2167b2 49%, #2f4f98)",
     bottom: 0,
-    padding: '0 10px',
-    height: '25px',
-    decoration: 'none',
+    padding: "0 10px",
+    height: "25px",
+    decoration: "none"
   }
-
 });
 
 class AppContent extends Component {
-
   state = {
-    activeStep: 0,
-    receivingAccount: '',
-    termsChecked: false,
-    loading: true,
-    labelWidth: 0
-  }
+    activeStep: 0
+  };
 
   render() {
-    const { classes, marca, veiculo, modelo, handleChange, infoTable, handleSubmit } = this.props;
+    const {
+      classes,
+      marca,
+      veiculo,
+      modelo,
+      handleChange,
+      infoTable,
+      handleSubmit
+    } = this.props;
     const { activeStep } = this.state;
-
 
     return (
       <React.Fragment>
-        <div className='container-fluid d-flex' style={{ minHeight: '70vh', alignItems: 'center', justifyContent: 'center' }}>
+        <div
+          className="container-fluid d-flex"
+          style={{
+            minHeight: "70vh",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
           <Container>
             {activeStep === 0 && (
               <React.Fragment>
@@ -70,7 +79,7 @@ class AppContent extends Component {
                   <br />
                   <Col md={2}>
                     <Select
-                      name="modeloeano"
+                      name="modelo"
                       placeholder="Modelo"
                       options={modelo}
                       classe={classes.select}
@@ -103,12 +112,17 @@ class AppContent extends Component {
         </div>
         <footer className={`fixed-bottom ${classes.footer}`}>
           <div className="text-center">
-            <a href="https://github.com/felipenoka" style={{ color: '#fff' }} className="decoration-none">
+            <a
+              href="https://github.com/felipenoka"
+              style={{ color: "#fff" }}
+              className="decoration-none"
+            >
               <FontAwesomeIcon
                 icon={faGithub}
-                color='#fff'
-                size='1x'
-                className='mr-1' />
+                color="#fff"
+                size="1x"
+                className="mr-1"
+              />
               Felipe Noka
             </a>
           </div>
@@ -117,4 +131,15 @@ class AppContent extends Component {
     );
   }
 }
+
+AppContent.propTypes = {
+  classes: PropTypes.object,
+  marca: PropTypes.array.isRequired,
+  veiculo: PropTypes.array.isRequired,
+  modelo: PropTypes.array.isRequired,
+  handleChange: PropTypes.func,
+  infoTable: PropTypes.any,
+  handleSubmit: PropTypes.func
+};
+
 export default withStyles(styles)(AppContent);
