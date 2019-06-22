@@ -1,19 +1,21 @@
-# Tabela Fipe
+<p><h1 align="center">Tabela Fipe</h1></p>
 
-### Demonstração
+## Demonstração
 
 ### https://desafio-volanty.netlify.com
 
-### Screenshot
+## Screenshot
 
-#### Mobile
-![Mobile Inicial](https://i.imgur.com/i5fGRxZ.png)
-![Mobile Search](https://i.imgur.com/WFBsCo3.png)
+#### Mobile:
+<p align="center">
+  <img src="https://i.imgur.com/i5fGRxZ.png" alt="quantocustameucarro" />
+  <img src="https://i.imgur.com/WFBsCo3.png" alt="quantocustameucarro" />
+</p>
 
-#### Browser
+#### Browser:
 ![Browser Search](https://i.imgur.com/YZ02jGI.png)
 
-### Instalação
+## Instalação
 
 Para realizar o download do projeto:
 
@@ -28,7 +30,7 @@ $ npm install
 $ npm start
 ```
   
-### Tecnologias
+## Tecnologias
 - HTML5
 
 - CSS
@@ -43,5 +45,5 @@ $ npm start
   - Husky
   
   
-### Documentação API Fipe
+## Documentação API Fipe
 A documentação da API utilizada para obter os dados está disponível em: [FIPEAPI](https://fipeapi.appspot.com).
