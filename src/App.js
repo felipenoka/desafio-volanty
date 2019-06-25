@@ -108,10 +108,6 @@ class App extends Component {
     }
   };
 
-  // handleSubmit = (e) => {
-  //     this.getVehicleFinal(this.state.currentIdVehicleFinal)
-  // }
-
   handleSubmit = () => {
     this.getVehicleFinal(this.state.currentIdVehicleFinal);
   };

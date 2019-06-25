@@ -27,10 +27,6 @@ const styles = () => ({
 });
 
 class AppContent extends Component {
-  state = {
-    activeStep: 0
-  };
-
   render() {
     const {
       classes,
@@ -41,7 +37,6 @@ class AppContent extends Component {
       infoTable,
       handleSubmit
     } = this.props;
-    const { activeStep } = this.state;
 
     return (
       <React.Fragment>
@@ -54,55 +49,53 @@ class AppContent extends Component {
           }}
         >
           <Container>
-            {activeStep === 0 && (
-              <React.Fragment>
-                <Row className="text-center justify-content-center mt-2 fase-1">
-                  <Col md={5}>
-                    <Select
-                      name="marca"
-                      placeholder="Marca"
-                      options={marca}
-                      classe={classes.select}
-                      handleChange={handleChange}
-                    />
-                  </Col>
-                  <br />
-                  <Col md={5}>
-                    <Select
-                      name="veiculo"
-                      placeholder="Veículo"
-                      options={veiculo}
-                      classe={classes.select}
-                      handleChange={handleChange}
-                    />
-                  </Col>
-                  <br />
-                  <Col md={2}>
-                    <Select
-                      name="modelo"
-                      placeholder="Modelo"
-                      options={modelo}
-                      classe={classes.select}
-                      handleChange={handleChange}
-                    />
-                  </Col>
-                </Row>
+            <React.Fragment>
+              <Row className="text-center justify-content-center mt-2 fase-1">
+                <Col md={5}>
+                  <Select
+                    name="marca"
+                    placeholder="Marca"
+                    options={marca}
+                    classe={classes.select}
+                    handleChange={handleChange}
+                  />
+                </Col>
                 <br />
-                <Row className="text-center justify-content-center mt-0 fase-1 flex-wrap">
-                  <Col md={5}>
-                    <Button
-                      id="BuscaVeiculo"
-                      size="lg"
-                      block
-                      className={classes.bgcontainer}
-                      onClick={handleSubmit}
-                    >
-                      <span>Buscar veículo</span>
-                    </Button>
-                  </Col>
-                </Row>
-              </React.Fragment>
-            )}
+                <Col md={5}>
+                  <Select
+                    name="veiculo"
+                    placeholder="Veículo"
+                    options={veiculo}
+                    classe={classes.select}
+                    handleChange={handleChange}
+                  />
+                </Col>
+                <br />
+                <Col md={2}>
+                  <Select
+                    name="modelo"
+                    placeholder="Modelo"
+                    options={modelo}
+                    classe={classes.select}
+                    handleChange={handleChange}
+                  />
+                </Col>
+              </Row>
+              <br />
+              <Row className="text-center justify-content-center mt-0 fase-1 flex-wrap">
+                <Col md={5}>
+                  <Button
+                    id="BuscaVeiculo"
+                    size="lg"
+                    block
+                    className={classes.bgcontainer}
+                    onClick={handleSubmit}
+                  >
+                    <span>Buscar veículo</span>
+                  </Button>
+                </Col>
+              </Row>
+            </React.Fragment>
             {!!infoTable.length && (
               <Row className="text-center justify-content-center mt-2 fase-1">
                 {!!infoTable.length && <AboutCar info={infoTable} />}
