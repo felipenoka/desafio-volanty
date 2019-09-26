@@ -4,6 +4,7 @@ import api from "./service/api";
 
 import AppContent from "./main/main";
 import Header from "./components/header/header";
+import Loading from "./components/layout/layout";
 
 class App extends Component {
   constructor() {
@@ -113,20 +114,24 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <Fragment>
-        <Header />
-        <AppContent
-          marca={this.state.marca}
-          veiculo={this.state.veiculo}
-          modelo={this.state.modelo}
-          veiculofinal={this.state.vehicleFinal}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          infoTable={this.state.infoTable}
-        />
-      </Fragment>
-    );
+    if (this.state.marca.length > 0) {
+      return (
+        <Fragment>
+          <Header />
+          <AppContent
+            marca={this.state.marca}
+            veiculo={this.state.veiculo}
+            modelo={this.state.modelo}
+            veiculofinal={this.state.vehicleFinal}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            infoTable={this.state.infoTable}
+          />
+        </Fragment>
+      );
+    } else {
+      return <Loading />;
+    }
   }
 }
 
